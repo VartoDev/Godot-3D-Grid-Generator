@@ -58,6 +58,7 @@ shape = SubResource("BoxShape3D_5wpy2")
 
 [node name="Player_Mesh" type="MeshInstance3D" parent="Person" unique_id=1197549657]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1787536, 0)
+visible = false
 mesh = SubResource("BoxMesh_ntaqt")
 
 [node name="Camera3D" type="Camera3D" parent="Person" unique_id=2034728305]
@@ -67,10 +68,24 @@ transform = Transform3D(0.99975723, 0.010227049, -0.019517196, -2.99655e-08, 0.8
 transform = Transform3D(0.9422943, -0.27497953, 0.1909652, 0, 0.5704103, 0.82135993, -0.33478567, -0.7739628, 0.53749436, 5.4257565, 6.9742236, 7.0502505)
 shadow_enabled = true
 
-[node name="Text" type="Label" parent="." unique_id=1979693325]
-offset_right = 370.0
-offset_bottom = 215.0
+[node name="global_position" type="Label" parent="." unique_id=1979693325]
+anchors_preset = -1
+anchor_left = 0.021000002
+anchor_top = 0.054
+anchor_right = 0.021000002
+anchor_bottom = 0.054
+offset_left = -8.000004
+offset_top = -6.0
+offset_right = 362.0
+offset_bottom = 209.0
 theme_override_font_sizes/font_size = 35
+
+[node name="Anleitung" type="Label" parent="." unique_id=979218559]
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 304.0
+offset_bottom = 121.0
+text = "press x to summon "
 
 [node name="Kugel" type="MeshInstance3D" parent="." unique_id=1223230724]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.2132902, 3.300568, 322.89853)

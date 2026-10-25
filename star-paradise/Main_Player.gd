@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 @onready var Main_Player = $"."
 @onready var camera = $Camera3D
-@onready var Cords = $"../Text"
+@onready var Cords = $"../global_position"
 @onready var Kugel = $"../Kugel"
 @onready var Boden = $"../Floor"
 
@@ -34,6 +34,12 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_D) or Input.is_action_pressed("ui_right"):
 		input_dir += transform.basis.x
 		
+	if Input.is_key_pressed(KEY_SHIFT):
+		input_dir -= transform.basis.y
+		
+	if Input.is_key_pressed(KEY_SPACE):
+		input_dir += transform.basis.y
+	
 	if input_dir != Vector3.ZERO:
 		velocity = input_dir.normalized() * speed
 	else:
@@ -59,15 +65,15 @@ func _input(event: InputEvent) -> void:
 				
 #...---*= [DU KANNST HIER DIE VARIABLE Z REIHEN ÄNDERN] =*---...
 
-				var Reihen_Z = 20
+				var Reihen_Z = 50
 
 #...---*= [DU KANNST HIER DIE VARIABLE Y REIHEN ÄNDERN] =*---...
 
-				var Reihen_Y = 20
+				var Reihen_Y = 50
 
 #...---*= [DU KANNST HIER DIE VARIABLE Y REIHEN ÄNDERN] =*---...
 
-				var Reihen_X = 20
+				var Reihen_X = 50
 				
 				
 				entferne_alte_kugeln() # <----- Ist wichtig damit wir neue Gitteranordungen erschaffen können
