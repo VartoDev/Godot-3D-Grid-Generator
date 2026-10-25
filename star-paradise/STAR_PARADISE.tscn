@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://duyatyvvdpr3w"]
+
+[ext_resource type="Script" uid="uid://i658n4c3vf1v" path="res://Main_Player.gd" id="1_yvbj7"]
+
+[sub_resource type="Environment" id="Environment_5wpy2"]
+background_mode = 1
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f208n"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5wpy2"]
+material = SubResource("StandardMaterial3D_f208n")
+size = Vector3(14.382874, 1, 15.247803)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05blp"]
+size = Vector3(14.502991, 0.84069824, 15.105103)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5wpy2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ntaqt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yvbj7"]
+albedo_color = Color(0.80784315, 1, 1, 1)
+metallic = 0.83
+emission_enabled = true
+emission_energy_multiplier = 7.71
+anisotropy_enabled = true
+anisotropy = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_05blp"]
+material = SubResource("StandardMaterial3D_yvbj7")
+
+[node name="Node3D" type="Node3D" unique_id=75846785]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=86253152]
+environment = SubResource("Environment_5wpy2")
+
+[node name="Floor" type="CharacterBody3D" parent="." unique_id=1332292134]
+
+[node name="Floor_Mesh" type="MeshInstance3D" parent="Floor" unique_id=2088526634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.24496317, 0.14727628, -2.5709748)
+visible = false
+mesh = SubResource("BoxMesh_5wpy2")
+
+[node name="Floor_Collision_Shape" type="CollisionShape3D" parent="Floor" unique_id=274866444]
+transform = Transform3D(1, 0, 0, 0, 1.2155807, 0, 0, 0, 1, -0.34664917, 0.10679583, -2.717102)
+shape = SubResource("BoxShape3D_05blp")
+
+[node name="Person" type="CharacterBody3D" parent="." unique_id=1831998126]
+script = ExtResource("1_yvbj7")
+
+[node name="Player_Collision_Shape" type="CollisionShape3D" parent="Person" unique_id=1289650703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16556, 0)
+shape = SubResource("BoxShape3D_5wpy2")
+
+[node name="Player_Mesh" type="MeshInstance3D" parent="Person" unique_id=1197549657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1787536, 0)
+mesh = SubResource("BoxMesh_ntaqt")
+
+[node name="Camera3D" type="Camera3D" parent="Person" unique_id=2034728305]
+transform = Transform3D(0.99975723, 0.010227049, -0.019517196, -2.99655e-08, 0.8857623, 0.46413958, 0.022034377, -0.4640269, 0.8855472, 0, 3.8939948, 9.635687)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=67617784]
+transform = Transform3D(0.9422943, -0.27497953, 0.1909652, 0, 0.5704103, 0.82135993, -0.33478567, -0.7739628, 0.53749436, 5.4257565, 6.9742236, 7.0502505)
+shadow_enabled = true
+
+[node name="Text" type="Label" parent="." unique_id=1979693325]
+offset_right = 370.0
+offset_bottom = 215.0
+theme_override_font_sizes/font_size = 35
+
+[node name="Kugel" type="MeshInstance3D" parent="." unique_id=1223230724]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.2132902, 3.300568, 0)
+mesh = SubResource("SphereMesh_05blp")
