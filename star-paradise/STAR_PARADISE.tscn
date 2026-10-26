@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duyatyvvdpr3w"]
 
-[ext_resource type="Script" uid="uid://i658n4c3vf1v" path="res://Main_Player.gd" id="1_yvbj7"]
+[ext_resource type="Script" uid="uid://i658n4c3vf1v" path="res://Scripts/Main_Player.gd" id="1_yvbj7"]
 
 [sub_resource type="Environment" id="Environment_5wpy2"]
 background_mode = 1
