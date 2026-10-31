@@ -65,15 +65,15 @@ func _input(event: InputEvent) -> void:
 				
 #...---*= [DU KANNST HIER DIE VARIABLE Z REIHEN ÄNDERN] =*---...
 
-				var Reihen_Z = 50
+				var Reihen_Z = 100
 
 #...---*= [DU KANNST HIER DIE VARIABLE Y REIHEN ÄNDERN] =*---...
 
-				var Reihen_Y = 50
+				var Reihen_Y = 100
 
 #...---*= [DU KANNST HIER DIE VARIABLE Y REIHEN ÄNDERN] =*---...
 
-				var Reihen_X = 50
+				var Reihen_X = 100
 				
 				
 				entferne_alte_kugeln() # <----- Ist wichtig damit wir neue Gitteranordungen erschaffen können
@@ -108,7 +108,7 @@ func gehe_reihe_für_reihe_durch(max_z, max_y, max_x):
 	var Chance = int(0)
 	while z < max_z:
 		if y < max_y:
-			Chance = randi_range(1, 10)
+			Chance = randi_range(1, 25)
 			if x < max_x:
 				if Chance == 1:
 					var Kugel_Kopie = Kugel.duplicate()
